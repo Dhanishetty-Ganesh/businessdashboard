@@ -14,7 +14,7 @@ const Dashboard = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5000/business-data", {
+      const res = await fetch("https://businessdashboard-xfbm.onrender.com/business-data", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -33,7 +33,7 @@ const Dashboard = () => {
     setLoading(true);
     try {
       const res = await fetch(
-        `http://localhost:5000/regenerate-headline?name=${formData.name}&location=${formData.location}`
+        `https://businessdashboard-xfbm.onrender.com/regenerate-headline?name=${formData.name}&location=${formData.location}`
       );
       const result = await res.json();
       setData((prev) => ({ ...prev, headline: result.headline }));
